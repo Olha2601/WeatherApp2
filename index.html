@@ -23,7 +23,7 @@
       <div class="weather-app">
          <form id="search-form" class="mb-3">
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-9">
                 <input
                   type="search"
                   placeholder="Type a city.."
@@ -39,24 +39,29 @@
                   class="btn btn-primary w-100"
                   id="search-btn"
                 />
-                </div>
-                <div class="row">
-                  <div class="col-6">
-                    <h1 id="city">New York</h1>
-                    <ul class="list-group">
-                      <li><span>Friday 15:06</span id="description">,  <span id="description"></span></li>
-                      <li>Humidity: <strong id="humidity">61</strong>%, Wind: <strong id="wind">5.66</strong> m/s
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="col-6">
-                    <img  src="http://openweathermap.org/img/wn/10d@2x.png" alt="icon" id="icon">
-                    <span id="temperature">23</span>
-                    °C
-                  </div>
-              <footer>This project was coded by <a href="https://www.linkedin.com/in/olha-khorobrykh-6342a0210/" target="_blank" rel="noopener noreferrer">Olha Khorobrykh</a> 
-                and is <a href="#" target="_blank" rel="noopener noreferrer">open-sourced on GitHub</a>
-                 and <a href="#" target="_blank" rel="noopener noreferrer">hosted on Netlify</a></footer>  
+              </div>
+            </div>
+          </form>
+
+         <div class="row">
+         <div class="col-6">
+              <h1 id="city">New York</h1>
+              <ul class="list-group">
+              <li><span id="date"></span >,  <span id="description"></span></li>
+             <li>Humidity: <strong id="humidity">61</strong>%, Wind: <strong id="wind">5.66</strong> m/s
+             </li>
+             </ul>
+          </div>
+          <div class="col-6">
+            <img  src="http://openweathermap.org/img/wn/10d@2x.png" alt="icon" id="icon">
+            <span id="temperature">23</span>
+            <span class="units"> <a href="#" id="celsius-link" class="active" >°C</a>
+              |<a href="#" id="fahrenheit-link" >F°</a> 
+            </span>
+          </div>
+         <footer>This project was coded by <a href="https://www.linkedin.com/in/olha-khorobrykh-6342a0210/" target="_blank" rel="noopener noreferrer">Olha Khorobrykh</a> 
+              and is <a href="#" target="_blank" rel="noopener noreferrer">open-sourced on GitHub</a>
+             and <a href="#" target="_blank" rel="noopener noreferrer">hosted on Netlify</a></footer>  
       </div>          
     </div>
     <script src="src/index.js"></script>
