@@ -14,6 +14,7 @@
       integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
       crossorigin="anonymous"
     />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Document</title>
   </head>
   <body class="app">
@@ -41,15 +42,15 @@
                 </div>
                 <div class="row">
                   <div class="col-6">
-                    <h1>New York</h1>
-                    <ul>
-                      <li><span>Friday 15:06</span>, clear sky</li>
-                      <li>Humidity: <strong>61%</strong>, Wind: <strong>5.66km/h</strong>
+                    <h1 id="city">New York</h1>
+                    <ul class="list-group">
+                      <li><span>Friday 15:06</span id="description">,  <span id="description"></span></li>
+                      <li>Humidity: <strong id="humidity">61</strong>%, Wind: <strong id="wind">5.66</strong> m/s
                       </li>
                     </ul>
                   </div>
                   <div class="col-6">
-                    <img src="" alt="">
+                    <img  src="http://openweathermap.org/img/wn/10d@2x.png" alt="icon" id="icon">
                     <span id="temperature">23</span>
                     °C
                   </div>
@@ -58,6 +59,6 @@
                  and <a href="#" target="_blank" rel="noopener noreferrer">hosted on Netlify</a></footer>  
       </div>          
     </div>
-    
+    <script src="src/index.js"></script>
   </body>
 </html>

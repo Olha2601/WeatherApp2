@@ -1,3 +1,18 @@
+body.app {
+  background: rgb(220, 212, 239);
+}
+
+ul {
+  list-style: none;
+}
+h1 {
+  font-family: "Ubuntu", sans-serif;
+  margin: 20px 0 10px;
+
+  font-weight: 700;
+  font-size: 38px;
+  color: #272142;
+}
 .weather-app {
   font-family: Cerebri-Sans, Helvetica, Arial, sans-serif;
   background: #fff;
@@ -6,16 +21,6 @@
   padding: 40px;
   margin: 50px;
   color: #878787;
-}
-body.app {
-  background: rgb(220, 212, 239);
-}
-h1 {
-  font-family: "Ubuntu", sans-serif;
-  margin: 20px 0 10px;
-  font-weight: 700;
-  font-size: 38px;
-  color: #272142;
 }
 #search-btn {
   background: rgb(200, 124, 228);
@@ -27,4 +32,6 @@ h1 {
   font-weight: 700;
   font-size: 70px;
   color: #272142;
+  position: relative;
+  top: 19px;
 }
