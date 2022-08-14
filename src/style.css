@@ -1,5 +1,7 @@
-body.app {
+.wrapper {
   background: rgb(220, 212, 239);
+  display: flex;
+  height: 100vh;
 }
 
 ul {
