@@ -60,3 +60,11 @@ footer {
 .active:hover {
   text-decoration: none;
 }
+.daily-forecast {
+  text-align: center;
+  color: #272142;
+}
+
+.daily-temp .min-temp {
+  opacity: 70%;
+}
