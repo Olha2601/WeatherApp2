@@ -56,6 +56,7 @@ footer {
   text-decoration: none;
   color: black;
   cursor: default;
+  pointer-events: none;
 }
 .active:hover {
   text-decoration: none;

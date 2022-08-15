@@ -55,8 +55,9 @@
           <div class="col-6">
             <img  src="http://openweathermap.org/img/wn/10d@2x.png" alt="icon" id="icon">
             <span id="temperature"></span>
-            <span class="units"> <a href="#" id="celsius-link" class="active" >°C</a>
-              |<a href="#" id="fahrenheit-link" >F°</a> 
+            <span class="units"> 
+              <a href="#" id="celsius-link" class="active" onclick="changeTemperature(event, 'celsius')" disabled>°C</a>
+              |<a href="#" id="fahrenheit-link" onclick="changeTemperature(event, 'fahrenheit')">F°</a> 
             </span>
           </div>
           <div class="daily-forecast" id="forecast">
