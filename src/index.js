@@ -136,26 +136,34 @@ function changeCurrentTemperature(unit) {
 }
 
 function changeDaysTemperature(unit) {
-  const minTempConverted = [];
-  const maxTempConverted = [];
+  // const minTempConverted = [];
+  // const maxTempConverted = [];
   let dailyTempMin = document.querySelectorAll(".min-temp");
   let dailyTempMax = document.querySelectorAll(".max-temp");
 
-  dailyTempMin.forEach((data) => {
-    minTempConverted.push(convertTemperature(parseInt(data.innerHTML), unit));
-  });
+  // dailyTempMin.forEach((data) => {
+  //   minTempConverted.push(convertTemperature(parseInt(dailyTempMin[i].childNodes[0].nodeValue), unit));
+  // });
 
-  dailyTempMax.forEach((data) => {
-    maxTempConverted.push(convertTemperature(parseInt(data.innerHTML), unit));
-  });
+  // dailyTempMax.forEach((data) => {
+  //   maxTempConverted.push(convertTemperature(parseInt(dailyTempMin[i].childNodes[0].nodeValue), unit));
+  // });
+
+  console.log(dailyTempMin[0].childNodes[0].nodeValue);
 
   for (let i = 0; i <= 5; i++) {
-    document.querySelector(
-      `#max-temp-${i}`
-    ).innerHTML = `${maxTempConverted[i]}°`;
-    document.querySelector(
-      `#min-temp-${i}`
-    ).innerHTML = `${minTempConverted[i]}°`;
+    // document.querySelector(
+    //   `#max-temp-${i}`
+    // ).innerHTML = `${maxTempConverted[i]}°`;
+
+    document.querySelector(`#max-temp-${i}`).innerHTML = `${convertTemperature(
+      parseInt(dailyTempMax[i].childNodes[0].nodeValue),
+      unit
+    )}°`;
+    document.querySelector(`#min-temp-${i}`).innerHTML = `${convertTemperature(
+      parseInt(dailyTempMin[i].childNodes[0].nodeValue),
+      unit
+    )}°`;
   }
 }
 
