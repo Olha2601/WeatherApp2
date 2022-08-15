@@ -1,15 +1,3 @@
-function handleSubmit(event) {
-  event.preventDefault();
-  let city = document.querySelector("#city-input").value;
-  searchCity(city);
-}
-
-function searchCity(city) {
-  let apiKey = `9eac4e24a0395af74f4f42db37f3b31b`;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(showWeather);
-}
-
 function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
@@ -33,7 +21,8 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   let days = ["Tue", "Wed", "Thu", "Fri"];
@@ -53,6 +42,16 @@ function displayForecast() {
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates.lon);
+
+  let apiKey = `2ec01c036c5655e9948bd34d81a48b60`;
+
+  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude={part}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function showWeather(response) {
@@ -82,6 +81,20 @@ function showWeather(response) {
   document.querySelector("#date").innerHTML = formatDate(
     response.data.dt * 1000
   );
+
+  getForecast(response.data.coord);
+}
+
+function searchCity(city) {
+  let apiKey = `9eac4e24a0395af74f4f42db37f3b31b`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showWeather);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let city = document.querySelector("#city-input").value;
+  searchCity(city);
 }
 
 function showFahrenheitTemp(event) {
@@ -113,5 +126,3 @@ let celsius = document.querySelector("#celsius-link");
 celsius.addEventListener("click", showCelsiusTemp);
 
 searchCity("New York");
-
-displayForecast();
