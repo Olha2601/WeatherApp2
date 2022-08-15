@@ -149,12 +149,13 @@ function changeDaysTemperature(unit) {
     maxTempConverted.push(convertTemperature(parseInt(data.innerHTML), unit));
   });
 
-  console.log(dailyTempMax);
-  console.log(dailyTempMin);
-  // if (maxTempConverted && minTempConverted)
   for (let i = 0; i <= 5; i++) {
-    document.querySelector(`#max-temp-${i}`).innerHTML = maxTempConverted[i];
-    document.querySelector(`#min-temp-${i}`).innerHTML = minTempConverted[i];
+    document.querySelector(
+      `#max-temp-${i}`
+    ).innerHTML = `${maxTempConverted[i]}°`;
+    document.querySelector(
+      `#min-temp-${i}`
+    ).innerHTML = `${minTempConverted[i]}°`;
   }
 }
 
@@ -177,57 +178,6 @@ function changeTemperature(event, unit) {
 
   changeCurrentTemperature(unit);
   changeDaysTemperature(unit);
-  // const minTemp = [];
-  // const maxTemp = [];
-  // let dailyTempMin = document.querySelectorAll(".min-temp");
-  // let dailyTempMax = document.querySelectorAll(".max-temp");
-
-  // celsius.classList.remove("active");
-  // fahrenheit.classList.add("active");
-
-  // let fahrenheitTemperature = (celsiusTemp * 9) / 5 + 32;
-  // document.querySelector("#temperature").innerHTML = Math.round(
-  //   fahrenheitTemperature
-  // );
-
-  // console.log(event);
-
-  // dailyTempMin.forEach((data) => {
-  //   minTemp.push(parseInt(data.innerHTML));
-  // });
-
-  // dailyTempMax.forEach((data) => {
-  //   maxTemp.push(parseInt(data.innerHTML));
-  // });
-
-  // console.log(fahrenheitTemperatures);
-  // let fahrenheitTemperaturE = (dailyTemp * 9) / 5 + 32;
-  // console.log(celsiusTemp);
-  // if (!fahrenheitTemperaturE) {
-  //   return;
-  // }
-
-  // fahrenheitTemperaturE.forEach((dailyTemp) => {
-  //   dailyTemp.innerHTML = fahrenheitTemperaturE;
-  // });
 }
-
-// function showCelsiusTemp(event) {
-//   event.preventDefault();
-//   celsius.classList.add("active");
-//   fahrenheit.classList.remove("active");
-//   document.querySelector("#temperature").innerHTML = Math.round(celsiusTemp);
-// }
-
-let celsiusTemp = null;
-
-let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", handleSubmit);
-
-// let fahrenheit = document.querySelector("#fahrenheit-link");
-// fahrenheit.addEventListener("click", showFahrenheitTemp);
-
-// let celsius = document.querySelector("#celsius-link");
-// celsius.addEventListener("click", showCelsiusTemp);
 
 searchCity("New York");
