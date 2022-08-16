@@ -1,5 +1,9 @@
 let apiKey = `2ec01c036c5655e9948bd34d81a48b60`;
 
+document
+  .querySelector("#current-btn")
+  .addEventListener("click", getCurrentLocation);
+
 function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
@@ -136,8 +140,8 @@ function changeCurrentTemperature(unit) {
 }
 
 function changeDaysTemperature(unit) {
-  // const minTempConverted = [];
-  // const maxTempConverted = [];
+  const minTempConverted = [];
+  const maxTempConverted = [];
   let dailyTempMin = document.querySelectorAll(".min-temp");
   let dailyTempMax = document.querySelectorAll(".max-temp");
 
@@ -188,4 +192,20 @@ function changeTemperature(event, unit) {
   changeDaysTemperature(unit);
 }
 
-searchCity("New York");
+function getPosition(position) {
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showWeather);
+}
+
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(getPosition);
+}
+
+function getCurrentLocationNow() {
+  navigator.geolocation.getCurrentPosition(getPosition);
+}
+searchCity("Kyiv");
+getCurrentLocationNow();
