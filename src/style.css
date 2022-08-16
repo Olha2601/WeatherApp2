@@ -67,6 +67,10 @@ h1 {
   bottom: 4px;
 }
 
+#description {
+  text-transform: capitalize;
+}
+
 #temperature {
   margin: 20px 0 10px;
   font-weight: 500;
@@ -81,10 +85,6 @@ h1 {
   font-weight: 700;
   font-size: 18px;
   color: #272142;
-}
-
-#search-form {
-  margin-bottom: 10px;
 }
 
 .unit {
